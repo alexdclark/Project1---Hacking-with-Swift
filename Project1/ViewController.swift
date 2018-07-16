@@ -20,6 +20,8 @@ class ViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         //Assigning a title to the Table View
         title="Storm Viewer"
+        
+       
         // Do any additional setup after loading the view, typically from a nib.
         
         //Creating a file manager
