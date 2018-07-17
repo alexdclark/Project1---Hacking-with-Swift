@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
         
         //Setting title of Detail View to the name of the selected image
         title = selectedImage
+        //Adding the Share Button on the right of the Navigation Controller (calling shareTapped on Tap)
          navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
 
         //Setting image to image (Using UIImage named: imageToLoad
@@ -45,10 +46,13 @@ class DetailViewController: UIViewController {
         navigationController?.hidesBarsOnTap = false
     }
 
+    //When Share button is tapped do this!
     @objc func shareTapped(){
+        //Share the image
         let vc = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         
+        //Present the popup
         present (vc, animated: true)
     }
     
